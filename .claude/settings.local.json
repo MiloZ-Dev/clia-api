@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /tmp/_cliaproj/clia && echo \"===== .env.example =====\" && cat .env.example && echo && echo \"===== docker-compose.yml =====\" && cat docker-compose.yml && echo && echo \"===== requirements.txt =====\" && cat requirements.txt)",
+      "Read(//tmp/_cliaproj/**)",
+      "Bash(python -m py_compile app/main.py app/core/config.py app/core/database.py app/core/scheduler.py app/config/cities.py app/models/weather.py app/schemas/weather.py app/services/weather_api.py app/services/cleaning.py app/services/export.py app/routers/weather.py app/routers/clean.py)",
+      "Bash(python -c \"import fastapi, sqlalchemy, pydantic_settings, pandas, requests, schedule; print\\('deps OK'\\)\")",
+      "Bash(python -m venv /tmp/cliavenv)",
+      "Bash(/tmp/cliavenv/Scripts/python.exe -m pip install -q --disable-pip-version-check fastapi sqlalchemy pydantic-settings pandas requests schedule python-multipart)",
+      "Bash(/tmp/cliavenv/Scripts/python.exe -m pip install -q --disable-pip-version-check psycopg2-binary)",
+      "Bash(/tmp/cliavenv/Scripts/python.exe -c ' *)",
+      "Bash(cd /tmp)",
+      "Read(//tmp/**)",
+      "Bash(/tmp/cliavenv/Scripts/python.exe -m pip install -q --disable-pip-version-check fastapi sqlalchemy pydantic-settings pandas requests schedule python-multipart psycopg2-binary)",
+      "Bash(rm -rf /tmp/cliavenv 2>/dev/null; echo \"cleaned\")",
+      "Bash(python -m py_compile app/core/scheduler.py app/models/alert.py app/services/alerts.py app/routers/alerts.py app/schemas/alert.py app/routers/weather.py app/services/export.py app/services/prediction.py app/routers/predict.py app/main.py)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

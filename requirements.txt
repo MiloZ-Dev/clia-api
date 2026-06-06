@@ -1,0 +1,26 @@
+# Web framework
+fastapi
+uvicorn[standard]
+
+# Settings & validation
+pydantic
+pydantic-settings
+
+# Database
+sqlalchemy
+psycopg2-binary
+
+# Async HTTP client (WeatherAPI.com, Open-Meteo, OpenWeatherMap, Anthropic)
+httpx
+
+# Data processing
+pandas
+
+# Time-series forecasting (climate prediction)
+prophet
+
+# CSV upload support
+python-multipart
+
+# Background scheduler
+schedule
